@@ -1,0 +1,56 @@
+.TH man 1 ""
+.Sh NAME
+_printf - format and print data. The
+.Ar "%"
+symbol denotes the beginning of the format mark.
+.\" The following lines are read in generating the apropos(man -k) database. Use only key
+.\" words here as the database is built based on the words here and in the .ND line.
+.\" Use .Nm macro to designate other names for the documented program.
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Mn _printf FORMAT             \" [-abcd]
+.Nm [ARGUMENT]...
+.br \" [-a path]
+.Mn _printf         \" [-abcd]
+.Nm OPTION         \" [-a path]
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+Print ARGUMENT(s) according to FORMAT, or execute according to OPTION:
+.br
+.br
+.Nm printf("%c",);
+.Ar //Print the corresponding ASCII character.
+.br
+.br
+.Nm printf("%d, %i",);
+.Ar //Signed decimal conversion of an integer.
+.br
+.br
+.Nm printf("%s",);
+.Ar //Character string (ending in '\\0').
+.br
+.br
+.Nm printf("%%",);
+.Ar //Print the % symbol.
+.br
+.br
+.Nm EXAMPLE:
+We want to print the string saved in
+.Ar char string [30];
+with the _printf function:
+.br
+We have to use
+.Nm _printf("% s\\n", string);
+.br
+.Sh SEE ALSO
+.\" List links in ascending order by section, alphabetically within a section.
+.\" Please do not reference files that do not exist without filing a bug report
+.Xr _printf 1
+.\" .Sh BUGS              \" Document known, unremedied bugs
+.\" .Sh HISTORY           \" Document history if command behaves in a unique manner
+.Sh AUTHOR
+.Nm Jose Luis Saldarriaga Bravo
+.Ar jose-luis.saldarriaga-bravo@holbertonschool.com
+.br
+.Nm Jhonatan Stiven Legarda Cruz
+.Ar steven.cruz@holbertonschool.com
+.br
+.Nm Holberton School students
