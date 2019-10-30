@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 include "holberton.h"
+=======
+#include "holberton.h"
+>>>>>>> 0d3dbdf34cd9a29da0ee1d52d5e2aa244fbfffc0
 
 /**
  * printInt - Prints an integer (into a buffer)
@@ -32,3 +36,7 @@ int printInt(buf *toprint, int num)
 	}
 	return (count);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0d3dbdf34cd9a29da0ee1d52d5e2aa244fbfffc0

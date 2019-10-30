@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 include "holberton.h"
+=======
+#include "holberton.h"
+>>>>>>> 0d3dbdf34cd9a29da0ee1d52d5e2aa244fbfffc0
 
 /**
  * _printf - Our own printf function
@@ -58,6 +62,7 @@ int conv(buf *toprint, const char *p, va_list lista)
 {
 	switch (*(p + 1))
 	{
+<<<<<<< HEAD
 	case 'c':
 		return (printChar(toprint, va_arg(lista, int)));
 	case 's':
@@ -86,6 +91,36 @@ int conv(buf *toprint, const char *p, va_list lista)
 		printChar(toprint, '%');
 		printChar(toprint, *(p + 1));
 		return (2);
+=======
+		case 'c':
+			return (printChar(toprint, va_arg(lista, int)));
+		case 's':
+			return (printString(toprint, va_arg(lista, char*)));
+		case 'd':
+		case 'i':
+			return (printInt(toprint, va_arg(lista, int)));
+		case 'b':
+		case 'u':
+		case 'o':
+		case 'x':
+		case 'X':
+		case 'S':
+		case 'p':
+		case 'l':
+		case 'h':
+		case 'r':
+		case 'R':
+			return (0);
+		case '%':
+			return (printChar(toprint, '%'));
+		case '\0':
+		case ' ':
+			return (-1);
+		default:
+			printChar(toprint, '%');
+			printChar(toprint, *(p + 1));
+			return (2);
+>>>>>>> 0d3dbdf34cd9a29da0ee1d52d5e2aa244fbfffc0
 	}
 	va_end(lista);
 	return (1);

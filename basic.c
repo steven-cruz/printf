@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 include "holberton.h"
+=======
+#include "holberton.h"
+>>>>>>> 0d3dbdf34cd9a29da0ee1d52d5e2aa244fbfffc0
 
 /**
  * printChar - send char to sendbuf.
