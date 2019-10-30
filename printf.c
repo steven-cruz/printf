@@ -16,7 +16,6 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (*format == '\0')
 		return (0);
-
 	va_start(list, format);
 	while (format[pos] != '\0')
 	{
@@ -38,18 +37,14 @@ int _printf(const char *format, ...)
 				va_arg(list, int);
 			va_end(aux);
 			pos += 2;
-			/*
-			 * TODO: Pending modification when adding other specifiers.
-			 */
+			/* TODO: Pending modification when adding other specifiers. */
 			continue;
 		}
 		printed += printChar(toPrint, format[pos]);
 		pos++;
 	}
-
 	va_end(list);
 	freeBuf(toPrint);
-
 	return (printed);
 }
 
@@ -74,7 +69,8 @@ int conv(buf *toprint, const char *p, va_list lista)
 		case 'd':
 		case 'i':
 			return (printInt(toprint, va_arg(lista, int)));
-		case 'b':
+		case 'R':
+			return (printRot(toprint, va_arg(lista, int)));
 		case 'u':
 		case 'o':
 		case 'x':
@@ -84,7 +80,7 @@ int conv(buf *toprint, const char *p, va_list lista)
 		case 'l':
 		case 'h':
 		case 'r':
-		case 'R':
+		case 'b':
 			return (0);
 		case '%':
 			return (printChar(toprint, '%'));
