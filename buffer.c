@@ -9,8 +9,7 @@ void sendbuf(buf *toprint, char c)
 {
 	toprint->alm[toprint->pos] = c;
 	toprint->pos += 1;
-	if (toprint->pos == 1024)
-		printBuffer(toprint);
+	printBuffer(toprint);
 }
 
 
