@@ -27,6 +27,15 @@ int _printf(const char *format, ...)
 			if (tmp == -1)
 				return (-1);
 			printed += tmp;
+			if (format[pos + 1] == 'c')
+				va_arg(list, int);
+			if (format[pos + 1] == 's')
+				va_arg(list, char*);
+			if (format[pos + 1] == 'i' || format[pos + 1] == 'd' ||
+					format[pos + 1] == 'b' || format[pos + 1] == 'u' ||
+					format[pos + 1] == 'o' || format[pos + 1] == 'x' ||
+					format[pos + 1] == 'X')
+				va_arg(list, int);
 			va_end(aux);
 			pos += 2;
 			/*
